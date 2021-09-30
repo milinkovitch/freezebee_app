@@ -1,13 +1,21 @@
 import { Button, Result } from 'antd';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Switch, useHistory } from 'react-router-dom';
+import { useUser } from '../../redux/user/selectors';
 import routesTemplates from '../../routes';
+import { fetchUser } from '../../redux/user/actions';
 import Loading from './Loading';
 
 function Routes() {
+  const dispatch = useDispatch();
   const history = useHistory();
+  const [, isFetching] = useUser();
 
-  const isFetching = false;
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, [dispatch]);
+
   if (isFetching) return <Loading />;
   return (
     <Switch>

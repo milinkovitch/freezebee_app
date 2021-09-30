@@ -21,8 +21,8 @@ const request = async (path, method = 'GET', body, isFile) => {
     method,
     headers: isFile ? headersFile : headers,
     body: isFile ? body : body && JSON.stringify(body),
+    credentials: 'include',
   });
-  if (response.status === 401) return <Redirect to="/logout" />;
   const json = await response.json().catch(() => null);
   if (!response.ok) throw json;
   return json;

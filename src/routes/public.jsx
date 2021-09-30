@@ -6,6 +6,8 @@ import IngredientsList from '../pages/Ingredients/List';
 import CreateOrdUpdateIngredient from '../pages/Ingredients/CreateOrUpdate';
 import ProcessesList from '../pages/Processes/List';
 import CreateOrdUpdateProcess from '../pages/Processes/CreateOrUpdate';
+import Login from '../pages/Auth/Login';
+import Register from '../pages/Auth/Register';
 
 const routes = [
   {
@@ -67,6 +69,16 @@ const routes = [
       { href: '/processes', name: 'Processus' },
       { href: '/processes/manage', name: 'Gérer' },
     ],
+  },
+  {
+    component: <Login />,
+    exact: true,
+    path: '/login',
+  },
+  {
+    component: <Register />,
+    exact: true,
+    path: '/register',
   },
 ];
 

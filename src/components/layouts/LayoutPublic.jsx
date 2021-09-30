@@ -13,7 +13,6 @@ function LayoutPublic({ children }) {
       <Header />
       <Content className="content" style={{ padding: '0 50px' }}>
         <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item href="/">Freezebee</Breadcrumb.Item>
           <Switch>
             {routes.map((route) => (
               <Route
@@ -22,9 +21,13 @@ function LayoutPublic({ children }) {
                 key={route.path}
                 render={(r) => (
                   <>
-                    {route.from.map((f) => (
-                      <Breadcrumb.Item href={f.href}>{f.name}</Breadcrumb.Item>
-                    ))}
+                    {route.from && route.from.length > 0 && (
+                      <Breadcrumb.Item href="/">Freezebee</Breadcrumb.Item>
+                    )}
+                    {route.from &&
+                      route.from.map((f) => (
+                        <Breadcrumb.Item href={f.href}>{f.name}</Breadcrumb.Item>
+                      ))}
                   </>
                 )}
               />

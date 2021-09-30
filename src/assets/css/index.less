@@ -2,19 +2,20 @@
 @import '~antd/dist/antd.less';
 
 .header {
-  height: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  padding: 0 20 0 0;
+  width: 100%;
+  z-index: 99;
 
   &__logo {
-    height: 100%;
-    width: auto;
-    display: inline-block;
-    padding: 5px 0;
-    img {
-      display: block;
-      height: 100%;
+    display: block;
+    max-height: 64px;
+
+    &__wrapper {
+      height: auto;
+      padding: 0 0 0 20px;
+      border: 0;
     }
   }
 }

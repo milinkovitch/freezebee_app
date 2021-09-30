@@ -49,15 +49,15 @@ function ModelsList() {
     { title: 'Gamme', dataIndex: 'range', sorter: true },
     {
       title: 'Ingrédients',
-      dataIndex: 'ingredients',
+      dataIndex: 'ingredientModels',
       sorter: true,
-      render: (ingredients) => (
+      render: (ingredientModels) => (
         <>
-          {ingredients && ingredients.length > 0 ? (
-            ingredients.map((ingredient) => (
-              <Popover content={ingredient.description} title={ingredient.name}>
-                <Tag color="blue" key={ingredient.id}>
-                  {ingredient.name}
+          {ingredientModels && ingredientModels.length > 0 ? (
+            ingredientModels.map((im) => (
+              <Popover content={im.ingredient.description} title={im.ingredient.name}>
+                <Tag color="blue" key={im.ingredient.id}>
+                  {im.ingredient.name}
                 </Tag>
               </Popover>
             ))

@@ -17,7 +17,9 @@ function CreateOrUpdateModel() {
     async function initForm() {
       // eslint-disable-next-line no-underscore-dangle
       const _model = location.state?.model;
-      _model.ingredients = _model.ingredients ? _model.ingredients.map((i) => i.id) : [];
+      _model.ingredients = _model.ingredientModels
+        ? _model.ingredientModels.map((im) => im.ingredient.id)
+        : [];
       await setModel(_model);
       formRef.current.resetFields();
     }
