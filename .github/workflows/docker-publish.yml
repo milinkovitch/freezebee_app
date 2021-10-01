@@ -29,7 +29,6 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          labels: ${{ steps.meta.outputs.labels }}
           tags: milinkovitch/freezebee_app:latest
 
       - name: Image digest
