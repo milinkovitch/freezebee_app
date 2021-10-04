@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 const getUrl = () => {
   switch (process.env.REACT_APP_ENV) {
     default:
-      return 'https://localhost:5001/api';
+      return 'https://10.10.40.15:44392/api';
   }
 };
 
